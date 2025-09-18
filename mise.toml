@@ -1,0 +1,20 @@
+[tools]
+elixir = "1.18.4-otp-28"
+erlang = "28.0.2"
+pre-commit = "4.3.0"
+
+[env]
+# Elixir/OTP specific settings
+ERL_AFLAGS = "-kernel shell_history enabled"
+ELIXIR_ERL_OPTIONS = "+fnu"
+
+[tasks.pre-commit]
+run = "pre-commit run --all-files"
+description = "Run pre-commit hooks on all files"
+
+[settings]
+# Enable automatic tool installation when entering directory
+not_found_auto_install = true
+# Show tool versions in status
+status = { show_tools = true, show_env = false }
+experimental = true
